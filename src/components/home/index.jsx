@@ -18,12 +18,13 @@ class Home extends Component {
     Tabletop.init({
       key: this.state.url,
       callback: (data, tabletop) => {
+        const { googleSheetName } = tabletop
         const nodes = tabletop.sheets('nodes').all()
         const edges = tabletop.sheets('edges').all()
         this.setState({ loading: false })
         this.props.history.push({
           pathname: '/network',
-          state: { nodes, edges }
+          state: { nodes, edges, googleSheetName }
         })
       }
     })
@@ -61,7 +62,9 @@ class Home extends Component {
             />
           </div>
         </div>
-        <p>Instructions here</p>
+        <div className="container">
+          <h3>Read this first!</h3>
+        </div>
       </div>
     )
   }
