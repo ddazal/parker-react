@@ -16,9 +16,9 @@
 }
 
 .search {
+  margin: 25px auto;
   position: relative;
   width: 90%;
-  margin: 25px auto;
 }
 
 .search input {
@@ -29,8 +29,8 @@
   font-family: 'Fira Sans', sans-serif;
   font-size: 16px;
   padding: 15px 10px;
-  width: 100%;
   transition: box-shadow .25s;
+  width: 100%;
 }
 
 .search input:focus {
@@ -38,11 +38,11 @@
 }
 
 .spinner {
+  background: white;
   position: absolute;
   right: 10px;
   top: 50%;
   transform: translateY(-50%);
-  background: white;
 }
 
 @media screen and (min-width: 76p8px) {

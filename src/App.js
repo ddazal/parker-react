@@ -1,11 +1,11 @@
-import React, { Component } from 'react';
-import { Switch, Route } from 'react-router-dom';
-import Home from './components/home';
-import Network from './components/network';
+import Home from './components/home'
+import Network from './components/network'
+import React, { Component } from 'react'
+import { Switch, Route } from 'react-router-dom'
 
 class App extends Component {
-  render() {
-    return(
+  render () {
+    return (
       <Switch>
         <Route exact path="/" component={Home}/>
         <Route path="/network" component={Network}/>
@@ -14,4 +14,4 @@ class App extends Component {
   }
 }
 
-export default App;
+export default App

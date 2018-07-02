@@ -1,14 +1,14 @@
-import React, { Component } from 'react';
-import { ClipLoader } from 'react-spinners';
-import Tabletop from 'tabletop';
-import './index.css';
+import './index.css'
+import React, { Component } from 'react'
+import Tabletop from 'tabletop'
+import { ClipLoader } from 'react-spinners'
 
 class Home extends Component {
-  constructor(props) {
-    super(props);
+  constructor (props) {
+    super(props)
     this.state = {
       url: '',
-      loading: false,
+      loading: false
     }
   }
   getData = (evt) => {
@@ -18,8 +18,8 @@ class Home extends Component {
     Tabletop.init({
       key: this.state.url,
       callback: (data, tabletop) => {
-        const nodes = tabletop.sheets('nodes').all();
-        const edges = tabletop.sheets('edges').all();
+        const nodes = tabletop.sheets('nodes').all()
+        const edges = tabletop.sheets('edges').all()
         this.setState({ loading: false })
         this.props.history.push({
           pathname: '/network',
@@ -34,8 +34,8 @@ class Home extends Component {
     })
   }
   render () {
-    const { loading } = this.state;
-    return(
+    const { loading } = this.state
+    return (
       <div id="home">
         <header className="column v-centered header">
           <div className="container">
@@ -47,7 +47,7 @@ class Home extends Component {
           <input
             type="text"
             placeholder="Google spreadsheet URL"
-            ref={ search => this.search = search }
+            ref={ search => { this.search = search } }
             onChange={this.changeState}
             onClick={({ target }) => target.select()}
             onKeyUp={this.getData}
@@ -67,4 +67,4 @@ class Home extends Component {
   }
 }
 
-export default Home;
+export default Home

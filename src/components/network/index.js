@@ -1,9 +1,9 @@
-import React, { Component } from 'react';
-import './index.css';
-import vis from 'vis';
+import './index.css'
+import React, { Component } from 'react'
+import vis from 'vis'
 
 class Network extends Component {
-  constructor (props){
+  constructor (props) {
     super(props)
     this.state = {
       nodes: [],
@@ -17,14 +17,15 @@ class Network extends Component {
     const data = { nodes, edges }
     this.setState({ nodes, edges })
     const container = document.getElementById('network')
+    /* eslint no-new: off */
     new vis.Network(container, data, {})
   }
   render () {
-    return(
+    return (
       <div id="network">
       </div>
     )
   }
 }
 
-export default Network;
+export default Network
