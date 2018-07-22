@@ -6,6 +6,26 @@ import { ClipLoader } from 'react-spinners'
 class Home extends Component {
   constructor (props) {
     super(props)
+    this.defaults = {
+      nodes: {
+        color: '#D2E5FF',
+        shape: 'circle',
+        font: {
+          color: '#343434',
+          size: 14
+        },
+        mass: 2
+      },
+      edges: {
+        arrows: {
+          to: true,
+          from: false
+        },
+        color: {
+          color: '#848484'
+        }
+      }
+    }
     this.state = {
       url: '',
       loading: false
@@ -19,8 +39,8 @@ class Home extends Component {
       key: this.state.url,
       callback: (data, tabletop) => {
         const { googleSheetName } = tabletop
-        const nodes = tabletop.sheets('nodes').all()
-        const edges = tabletop.sheets('edges').all()
+        const nodes = tabletop.sheets('nodes').all().map(node => ({ ...this.defaults.nodes, ...node }))
+        const edges = tabletop.sheets('edges').all().map(edge => ({ ...this.defaults.edges, ...edge }))
         this.setState({ loading: false })
         this.props.history.push({
           pathname: '/network',

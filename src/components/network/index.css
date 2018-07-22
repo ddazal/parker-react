@@ -1,9 +1,14 @@
 header {
   background: #3498db;
   color: #ffffff;
+  position: sticky;
+  top: 0;
 }
 header .action:nth-of-type(1) {
   margin-right: 10px;
+}
+a {
+  cursor: pointer;
 }
 #canvas {
   height: 100vh;
@@ -15,7 +20,7 @@ header .action:nth-of-type(1) {
 }
 .shapes {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+  grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
   grid-gap: 20px;
 }
 .shape-btn {
@@ -29,4 +34,15 @@ header .action:nth-of-type(1) {
   padding: 10px 15px;
   position: relative;
   transition: all .25s linear;
+}
+.tab-input {
+  border-radius: 2px;
+  border: none;
+  box-shadow: 0 0 5px;
+  display: block;
+  font-family: 'Fira Sans', sans-serif;
+  font-size: 16px;
+  padding: 5px 10px;
+  transition: box-shadow .25s;
+  width: 100px;
 }
