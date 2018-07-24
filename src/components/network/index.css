@@ -46,3 +46,12 @@ a {
   transition: box-shadow .25s;
   width: 100px;
 }
+.swal2-content {
+  background: #002240;
+  border-radius: 5px;
+  color: #ffffff !important;
+  font-size: 14px !important;
+  overflow-x: auto;
+  padding: 10px !important;
+  white-space: nowrap;
+}

@@ -132,11 +132,8 @@ class Network extends Component {
     const title = this.props.location.state.googleSheetName
     axios.post('https://parker-gen.herokuapp.com/sharer', { nodes, edges, title })
       .then(results => {
-        const { location } = results.data
-        swal({
-          title: 'Now share it!',
-          text: location
-        })
+        const { type, text, title } = results.data
+        swal({ type, text, title })
       })
   }
   render () {
