@@ -5,6 +5,8 @@ import FaCog from 'react-icons/lib/fa/cog'
 import FaShareAlt from 'react-icons/lib/fa/share-alt'
 import Tab from '../tabs/tab'
 import Tabs from '../tabs/tabs'
+import axios from 'axios'
+import swal from 'sweetalert2'
 import vis from 'vis'
 
 class Network extends Component {
@@ -124,6 +126,19 @@ class Network extends Component {
     const { checked } = event.target
     this.state.edges.get().forEach(edge => this.state.edges.update({ ...edge, arrows: { to: checked } }))
   }
+  share = () => {
+    const nodes = this.state.nodes.get()
+    const edges = this.state.edges.get()
+    const title = this.props.location.state.googleSheetName
+    axios.post('https://parker-gen.herokuapp.com/sharer', { nodes, edges, title })
+      .then(results => {
+        const { location } = results.data
+        swal({
+          title: 'Now share it!',
+          text: location
+        })
+      })
+  }
   render () {
     return (
       <div id="network" className="column">
@@ -137,7 +152,7 @@ class Network extends Component {
                 <FaCog />
                 <small>Settings</small>
               </a>
-              <a className="action column h-centered">
+              <a className="action column h-centered" onClick={this.share}>
                 <FaShareAlt />
                 <small>Share</small>
               </a>
