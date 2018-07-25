@@ -3,6 +3,7 @@ header {
   color: #ffffff;
   position: sticky;
   top: 0;
+  z-index: 10;
 }
 header .action:nth-of-type(1) {
   margin-right: 10px;

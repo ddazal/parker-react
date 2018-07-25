@@ -28,3 +28,19 @@ body {
   margin: 0 auto;
   width: 90%;
 }
+
+.container_sm {
+  width: 90%;
+}
+
+@media screen and (min-width: 768px) {
+  .container_sm {
+    width: 80%;
+  }
+}
+
+@media screen and (min-width: 992px) {
+  .container_sm {
+    width: 60%;
+  }
+}

@@ -3,6 +3,7 @@
   background: linear-gradient(to left, #3498db, #2c3e50);
   color: white;
   min-height: 25vh;
+  position: static;
 }
 
 .header__title {
@@ -16,8 +17,11 @@
 }
 
 .search {
-  margin: 25px auto;
-  position: relative;
+  background: #ffffff;
+  margin: 0 auto;
+  padding: 25px 0 0;
+  position: sticky;
+  top: 0;
   width: 90%;
 }
 
@@ -41,8 +45,66 @@
   background: white;
   position: absolute;
   right: 10px;
-  top: 50%;
-  transform: translateY(-50%);
+  top: 100%;
+  transform: translateY(-150%);
+}
+
+.title {
+  margin: 40px 0 20px;
+  font-size: 40px;
+}
+
+.content {
+  font-size: 20px;
+  line-height: 30px;
+  font-weight: 300;
+}
+
+.disclaimer {
+  font-size: small;
+  margin-top: 0;
+  text-align: right;
+}
+
+.disclaimer a {
+  color: #2c3e50;
+}
+
+blockquote {
+  border-left: 5px solid #2c3e50;
+  margin: 0;
+  padding-left: 40px;
+}
+
+.instructions {
+  list-style-type: none;
+  padding: 0;
+}
+
+.step {
+  display: flex;
+  margin-bottom: 50px;
+}
+
+.step__number {
+  color: #2e86ab;
+  font-size: 50px;
+  font-weight: bold;
+}
+
+.step__detail {
+  padding-left: 20px;
+}
+
+.step__detail p {
+  margin: 0;
+}
+
+.step__image {
+  box-shadow: -2px 2px 5px #2a2a2a;
+  display: block;
+  max-width: 100%;
+  margin: 20px 0;
 }
 
 @media screen and (min-width: 76p8px) {

@@ -29,6 +29,7 @@ class Network extends Component {
         edge: undefined
       }
     }
+    this.defaults = props.location.state.defaults
   }
   componentDidMount () {
     const { state } = this.props.location
@@ -123,7 +124,7 @@ class Network extends Component {
     this.state.edges.get().forEach(edge => this.state.edges.update({ ...edge, arrows: { from: checked } }))
   }
   changeEdgesArrowTo = event => {
-    const { checked } = event.target
+    let { checked } = event.target
     this.state.edges.get().forEach(edge => this.state.edges.update({ ...edge, arrows: { to: checked } }))
   }
   share = () => {
@@ -200,7 +201,12 @@ class Network extends Component {
             </Tab>
             <Tab title="Size">
               <p style={{ marginTop: 0 }}>Node size<sup><small>*</small></sup></p>
-              <input type="number" min="1" max="50" onChange={this.changeNodeSize} className="tab-input"/>
+              <input
+                type="number"
+                min="1"
+                max="50"
+                onChange={this.changeNodeSize}
+                className="tab-input"/>
               <div style={{ marginTop: 16 }}>
                 <small>*<i>Size only affects the nodes that place the label outside them</i></small>
               </div>
