@@ -107,6 +107,13 @@ blockquote {
   margin: 20px 0;
 }
 
+footer {
+  background: #2c3e50;
+  color: white;
+  padding: 15px 0;
+  text-align: center;
+}
+
 @media screen and (min-width: 76p8px) {
   .search {
     width: 80%;

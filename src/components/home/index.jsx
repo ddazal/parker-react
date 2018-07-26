@@ -2,6 +2,7 @@ import './index.css'
 import React, { Component } from 'react'
 import Tabletop from 'tabletop'
 import { ClipLoader } from 'react-spinners'
+import settingsImage from '../../assets/settings.png'
 
 class Home extends Component {
   constructor (props) {
@@ -117,6 +118,7 @@ class Home extends Component {
                 <p><strong>Describe your edges</strong></p>
                 <p>Create a new tab and name it <strong>edges</strong>. {'Let\'s'} assume that in the step above you created a node with id <strong>A</strong> and a node with id <strong>B</strong> and {'let\'s'} also assume that the link comes out <strong>from</strong> A <strong>to</strong> B.</p>
                 <p>In order to create a connection, you are going to need two columns and the column headers must be named as <strong>from</strong> and <strong>to</strong> and their values must be the ids of the nodes that you want to get connected. In this case: from = A and to = B.</p>
+                <p>Optionally, you can create a third column named <strong>label</strong> to describe the relationship between the nodes.</p>
               </div>
             </li>
             <li className="step">
@@ -127,7 +129,14 @@ class Home extends Component {
               </div>
             </li>
           </ol>
+          <h4 className="title">Cool! What else can I do?</h4>
+          <p className="content">Customize and share your network.</p>
+          <p className="content">For the nodes you can change their background color, their label color, their shape and their size. For the edges you can change their color and the direction of their arrow.</p>
+          <p className="content">Either clicking on the entity itself (node, edge) or clicking in the <strong>settings</strong> button placed in the navbar will open a box where you can manage the customization</p>
+          <img src={settingsImage} alt="" style={{ maxWidth: '100%', display: 'block', margin: '0 auto' }}/>
+          <p className="content">Last, but not least, share your network by clicking on the correspondent button. This will give you an iframe html code that you can paste within your personal blog or into a CMS editor. Either if you are a data journalism or a person interested in data visualization this tool will give you superpowers</p>
         </div>
+        <footer>From Colombia with ❤ to the world</footer>
       </div>
     )
   }
