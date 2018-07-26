@@ -16,6 +16,8 @@ As you may notice, there are two bold words in the quote above: nodes and lines.
 1. **Describe your edges:** create a new tab and name it **edges**. Let's assume that in the step above you created a node with id **A** and a node with id **B** and let's also assume that the link comes out **from** A **to** B. In order to create a connection, you are going to need two columns and the column headers must be named as **from** and **to** and their values must be the ids of the nodes that you want to get connected. In this case: from = A and to = B. Optionally, you can create a third column named **label** to describe the relationship between the nodes.
 1. **Go public**: it's time to publish your spreadsheet to the world. Go to `File > Publish to the Web` and press `Publish`. Now copy the URL from the browser's adress bar, paste it in the input that is floating at the top of the page, hit enter and voilà, your network is ready.
 
+[Sample here](https://docs.google.com/spreadsheets/d/1llUmt8b9gB5haZ7RRbhZK9xRhBrhG7wo-q5I1IlPHuU/edit#gid=0)
+
 ## Cool! What else can I do?
 Customize and share your network.
 

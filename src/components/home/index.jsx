@@ -129,6 +129,7 @@ class Home extends Component {
               </div>
             </li>
           </ol>
+          <p className="content sample"><a href="https://docs.google.com/spreadsheets/d/1llUmt8b9gB5haZ7RRbhZK9xRhBrhG7wo-q5I1IlPHuU/edit#gid=0" target="_blank" rel="noopener noreferrer">Sample here</a></p>
           <h4 className="title">Cool! What else can I do?</h4>
           <p className="content">Customize and share your network.</p>
           <p className="content">For the nodes you can change their background color, their label color, their shape and their size. For the edges you can change their color and the direction of their arrow.</p>
