@@ -8,6 +8,7 @@ import Tabs from '../tabs/tabs'
 import axios from 'axios'
 import swal from 'sweetalert2'
 import vis from 'vis'
+import { ClipLoader } from 'react-spinners'
 
 class Network extends Component {
   constructor (props) {
@@ -27,7 +28,8 @@ class Network extends Component {
       selected: {
         node: undefined,
         edge: undefined
-      }
+      },
+      loading: false
     }
     this.defaults = props.location.state.defaults
   }
@@ -128,12 +130,14 @@ class Network extends Component {
     this.state.edges.get().forEach(edge => this.state.edges.update({ ...edge, arrows: { to: checked } }))
   }
   share = () => {
+    this.setState({ loading: true })
     const nodes = this.state.nodes.get()
     const edges = this.state.edges.get()
     const title = this.props.location.state.googleSheetName
     axios.post('https://parker-gen.herokuapp.com/sharer', { nodes, edges, title })
       .then(results => {
         const { type, text, title } = results.data
+        this.setState({ loading: false })
         swal({ type, text, title })
       })
   }
@@ -145,15 +149,19 @@ class Network extends Component {
             <p className="header-title column">
               <span>{ this.props.location.state.googleSheetName }</span>
             </p>
-            <div className="header-actions line">
+            <div className="header-actions line v-centered">
               <a className="action column h-centered" onClick={this.openGeneralSettings}>
                 <FaCog />
                 <small>Settings</small>
               </a>
-              <a className="action column h-centered" onClick={this.share}>
-                <FaShareAlt />
-                <small>Share</small>
-              </a>
+              {
+                !this.state.loading
+                  ? (<a className="action column h-centered" onClick={this.share}>
+                    <FaShareAlt />
+                    <small>Share</small>
+                  </a>)
+                  : (<ClipLoader size={20} color={'#f5f749'} loading={this.state.loading} />)
+              }
             </div>
           </div>
         </header>
